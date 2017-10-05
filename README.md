@@ -51,7 +51,10 @@ function _import(p){return Promise.resolve().then(function(){return require(p)})
 `
 ```
 
-If there are no import calls, the file won't be parsed, so it should be pretty quick.
+It uses [js-tokens](https://github.com/lydell/js-tokens) instead of a full parser, so it's very quick.
+Some patterns aren't supported though.
+For example, `import()` inside a template string won't be transformed.
+If this is a problem, please open an issue and we'll figure out how to make it work :)
 
 ## License
 
